@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "AdminHomePage";
+}
+
+<h2>AdminHomePage</h2>
+
+@model IEnumerable<PolicyManagement.Models.PolicyVendor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyVendorRegNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorWebsite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorStatus)
+        </th>
+    
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.VendorName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfBirth)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PolicyVendorRegNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PolicyType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Country)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.State)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Zip)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.EmailId)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ContactNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VendorWebsite)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VendorStatus)
+    </td>
+         <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.PolicyVendorRegNo }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PolicyVendorRegNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PolicyVendorRegNo })
+        </td>
+
+</tr>
+    }
+
+</table>
+
+
